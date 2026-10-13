@@ -53,32 +53,29 @@ document.addEventListener('click', (e) => {
   toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2600);
 });
 
-// Video i Om oss: spiller bare når den er synlig, og aldri automatisk ved redusert bevegelse
-const aboutVideo = document.querySelector('.about-video video');
-const videoToggle = document.querySelector('.video-toggle');
+// Videoer: spiller bare når de er synlige, kan pauses, og starter aldri av seg selv ved redusert bevegelse
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-let videoPausedByUser = reduceMotion;
 
-function setVideoPaused(paused) {
-  videoToggle.setAttribute('aria-pressed', String(paused));
-  if (paused) aboutVideo.pause();
-  else aboutVideo.play().catch(() => {});
-}
+document.querySelectorAll('[data-video]').forEach((wrapper) => {
+  const video = wrapper.querySelector('video');
+  const toggle = wrapper.querySelector('.video-toggle');
+  let pausedByUser = reduceMotion;
 
-if (aboutVideo) {
-  videoToggle.setAttribute('aria-pressed', String(videoPausedByUser));
+  toggle.setAttribute('aria-pressed', String(pausedByUser));
 
-  videoToggle.addEventListener('click', () => {
-    videoPausedByUser = !videoPausedByUser;
-    setVideoPaused(videoPausedByUser);
+  toggle.addEventListener('click', () => {
+    pausedByUser = !pausedByUser;
+    toggle.setAttribute('aria-pressed', String(pausedByUser));
+    if (pausedByUser) video.pause();
+    else video.play().catch(() => {});
   });
 
   new IntersectionObserver(([entry]) => {
-    if (videoPausedByUser) return;
-    if (entry.isIntersecting) aboutVideo.play().catch(() => {});
-    else aboutVideo.pause();
-  }, { threshold: 0.25 }).observe(aboutVideo);
-}
+    if (pausedByUser) return;
+    if (entry.isIntersecting) video.play().catch(() => {});
+    else video.pause();
+  }, { threshold: 0.25 }).observe(wrapper);
+});
 
 // Filopplasting: vis filnavn
 const fileInput = document.getElementById('fil');

@@ -11,15 +11,15 @@
   <meta property="og:description" content="Lokale fagfolk på Jæren. Rehabilitering, tilbygg, vinduer og dører, med én kontakt for hele jobben.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
-  <meta property="og:image" content="assets/img/hero.webp">
+  <meta property="og:image" content="assets/img/hero-poster.webp">
   <meta name="theme-color" content="#161816">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/hero.webp">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="preload" as="image" href="assets/img/hero-poster.webp?v=1">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -28,7 +28,7 @@
     "name": "Jærprosjekt AS",
     "url": "https://jarpro.no/",
     "logo": "https://jarpro.no/assets/logo/logo-stacked-dark.png",
-    "image": "https://jarpro.no/assets/img/hero.webp",
+    "image": "https://jarpro.no/assets/img/hero-poster.webp",
     "description": "Lokalt tømrer- og byggefirma i Sandnes. Rehabilitering, tilbygg og påbygg, dører, vinduer og trapper på Jæren.",
     "telephone": "+47 [telefon]",
     "email": "[e-post]@jarpro.no",
@@ -96,19 +96,26 @@
   <main id="innhold">
 
     <!-- 2. Hero -->
-    <section class="hero" aria-labelledby="hero-tittel">
-      <div class="hero-text">
-        <h1 id="hero-tittel">Tømrer i Sandnes og på Jæren</h1>
-        <p class="hero-lead">Vi rehabiliterer, bygger til og bytter vinduer og dører for folk på Jæren. Du har én kontakt fra første befaring til siste list er på plass.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#kontakt">Be om befaring</a>
-          <a class="btn btn-outline" href="tel:+4700000000">Ring oss</a>
+    <section class="hero" aria-labelledby="hero-tittel" data-video>
+      <video class="hero-video" muted loop playsinline preload="auto" poster="assets/img/hero-poster.webp?v=1" aria-hidden="true">
+        <source src="assets/video/hero.webm?v=1" type="video/webm">
+        <source src="assets/video/hero.mp4?v=1" type="video/mp4">
+      </video>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-tittel">Tømrer i Sandnes og på Jæren</h1>
+          <p class="hero-lead">Vi rehabiliterer, bygger til og bytter vinduer og dører for folk på Jæren. Du har én kontakt fra første befaring til siste list er på plass.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#kontakt">Be om befaring</a>
+            <a class="btn btn-ghost-light" href="tel:+4700000000">Ring oss</a>
+          </div>
+          <p class="hero-note"><span class="slash" aria-hidden="true"></span>Medlem av Mesterhus</p>
         </div>
-        <p class="hero-note"><span class="slash" aria-hidden="true"></span>Medlem av Mesterhus</p>
       </div>
-      <figure class="hero-media">
-        <img src="assets/img/hero.webp" alt="Hvitt trehus med rødt tak og grønn hage" width="1920" height="1200" fetchpriority="high">
-      </figure>
+      <button class="video-toggle hero-toggle" type="button" aria-pressed="false">
+        <span class="video-toggle-pause">Pause video</span>
+        <span class="video-toggle-play">Spill av video</span>
+      </button>
     </section>
 
     <!-- 3. Trust bar -->
@@ -370,7 +377,7 @@
     <section class="section" id="om-oss" aria-labelledby="om-tittel">
       <div class="container about">
         <figure class="about-media">
-          <div class="about-video">
+          <div class="about-video" data-video>
             <video muted loop playsinline preload="none" poster="assets/img/om-oss-poster.webp?v=2" aria-label="Tømrer setter opp ny hvit kledning på et trehus på Jæren">
               <source src="assets/video/om-oss.webm?v=2" type="video/webm">
               <source src="assets/video/om-oss.mp4?v=2" type="video/mp4">
@@ -546,6 +553,6 @@
     <a class="btn btn-primary" href="#kontakt">Be om befaring</a>
   </div>
 
-  <script src="js/main.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
 </body>
 </html>

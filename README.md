@@ -8,7 +8,9 @@ Static one-page prototype (HTML, CSS, vanilla JS). No build step.
 ## Before showing the client
 
 - Text in `[brackets]` is placeholder content (phone, email, opening hours, reviews, team photo).
-- Photos are stock images from Unsplash, and the hero video is hotlinked from Pexels (video 11062231). Replace them with the client's own material.
+- Photos are stock images from Unsplash. Replace them with the client's own material.
+- Logo files in `assets/logo/` are cut from a PNG. Ask the client for a vector version (SVG, AI or PDF).
+- The map is a Google Maps embed of Somaveien 2, 4313 Sandnes.
 - Tak and Terrasse service cards are hidden. Set `VIS_UBEKREFTEDE_TJENESTER = true` in `js/main.js` once confirmed.
 - Mesterhus links point to mesterhus.no until the member page URL is confirmed.
 - Links like `/rehabilitering` and `/sandnes` represent future pages and show a notice instead of navigating.

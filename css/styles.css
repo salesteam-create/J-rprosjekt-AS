@@ -105,12 +105,7 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
   color: var(--muted);
   display: inline-flex; align-items: center; gap: 10px;
 }
-.eyebrow::before, .slash {
-  content: ""; display: inline-block; width: 7px; height: 16px; background: var(--green);
-  transform: skewX(calc(var(--slant) * -1));
-}
 .eyebrow-light { color: rgba(255, 255, 255, 0.85); }
-.eyebrow-light::before { background: #fff; }
 
 .lead { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 52ch; }
 
@@ -232,7 +227,6 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-head); font-weight: 500; font-size: 15px; color: rgba(255, 255, 255, 0.9);
 }
-.hero-note .slash { background: #fff; }
 .video-toggle.hero-toggle { left: auto; right: var(--gutter); bottom: 16px; }
 
 @media (min-width: 900px) {
@@ -256,18 +250,14 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
   mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 .marquee-track {
-  display: flex; flex-shrink: 0; align-items: center; gap: 56px; padding: 22px 28px;
+  display: flex; flex-shrink: 0; align-items: center; gap: 56px; padding: 24px 28px;
   animation: marquee 45s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-100%); } }
 
-.cert { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; color: var(--ink); }
-.cert-mark {
-  display: grid; place-items: center; width: 42px; height: 42px; flex: none;
-  border: 1.5px solid var(--ink);
-}
-.cert-mark svg { width: 22px; height: 22px; stroke-width: 1.6; }
+.cert { display: inline-flex; align-items: center; gap: 56px; white-space: nowrap; color: var(--ink); }
+.cert::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
 .cert-text { display: flex; flex-direction: column; line-height: 1.15; }
 .cert-name { font-family: var(--font-head); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
 .cert-sub { font-family: var(--font-head); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
@@ -276,17 +266,8 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; gap: 20px 40px; width: 100%; }
   .marquee-track[aria-hidden="true"], .marquee-track .cert:nth-child(n+6) { display: none; }
+  .cert::after { display: none; }
 }
-
-/* ---------- Badge (skrå, fra logoen) ---------- */
-
-.badge {
-  display: inline-grid; place-items: center; flex: none;
-  width: 46px; height: 34px; background: var(--ink); color: #fff;
-  transform: skewX(calc(var(--slant) * -1));
-}
-.badge > span { transform: skewX(var(--slant)); font-family: var(--font-head); font-weight: 600; font-size: 14px; letter-spacing: 0.04em; }
-.badge-muted { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
 
 /* ---------- Services ---------- */
 
@@ -300,7 +281,7 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
 
 .service-list { border-top: 1.5px solid var(--ink); }
 .service-row {
-  display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: start;
+  display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
   padding: 26px 0; border-bottom: 1px solid var(--line); text-decoration: none;
 }
 .service-text { display: flex; flex-direction: column; gap: 6px; }
@@ -389,11 +370,8 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
 
 .quotes { display: grid; gap: 40px; }
 @media (min-width: 900px) { .quotes { grid-template-columns: repeat(3, 1fr); gap: 48px; } }
-.quotes li { position: relative; padding-left: 34px; }
-.quotes li::before {
-  content: ""; position: absolute; left: 10px; top: 6px; height: 46px; width: 6px; background: var(--green);
-  transform: skewX(calc(var(--slant) * -1));
-}
+.quotes li { border-top: 1.5px solid var(--ink); padding-top: 20px; }
+.stars { color: var(--green); font-size: 18px; letter-spacing: 0.12em; margin-bottom: 12px; }
 .quotes blockquote p { font-family: var(--font-head); font-weight: 500; font-size: 21px; line-height: 1.45; color: var(--ink); }
 .quote-by { margin-top: 18px; font-size: 15px; color: var(--muted); }
 .quote-by strong { color: var(--ink); }

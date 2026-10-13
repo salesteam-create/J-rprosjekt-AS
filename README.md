@@ -7,7 +7,7 @@ Static one-page prototype (HTML, CSS, vanilla JS). No build step.
 
 ## Before showing the client
 
-- Text in `[brackets]` is placeholder content (phone, email, opening hours, reviews, team photo).
+- Contact details (phone 51 00 00 00, post@jarpro.no, opening hours) and the three reviews are made-up examples. The reviews are labelled as examples on the page. Replace with real details and real reviews before launch.
 - Photos are a mix of Unsplash stock and reference images supplied by the sales team (services image and project tiles p1, p3, p5, p6). Some reference photos may belong to other builders: do not publish them without permission. Replace everything with the client's own material before launch.
 - The hero video (`assets/video/hero.*`) and About video (`assets/video/om-oss.*`) are AI-generated with Gemini, cropped slightly to remove the corner mark. Replace them with real footage before launch.
 - Logo files in `assets/logo/` are cut from a PNG. Ask the client for a vector version (SVG, AI or PDF).

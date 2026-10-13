@@ -242,11 +242,9 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
       linear-gradient(90deg, rgba(10, 12, 10, 0.8) 0%, rgba(10, 12, 10, 0.55) 38%, rgba(10, 12, 10, 0.05) 70%),
       linear-gradient(180deg, rgba(10, 12, 10, 0) 60%, rgba(10, 12, 10, 0.35) 100%);
   }
-  .hero-inner { padding-top: 96px; padding-bottom: 120px; }
+  .hero-inner { padding-top: 96px; padding-bottom: 96px; }
   .hero-text { gap: 26px; }
-  .video-toggle.hero-toggle { bottom: calc(var(--cut) + 12px); }
-  /* Skrå underkant, samme vinkel som J-en */
-  .hero { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), 0 100%); }
+  .video-toggle.hero-toggle { bottom: 24px; }
 }
 
 /* ---------- Trust bar ---------- */

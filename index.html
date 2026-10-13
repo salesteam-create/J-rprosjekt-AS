@@ -370,8 +370,17 @@
     <section class="section" id="om-oss" aria-labelledby="om-tittel">
       <div class="container about">
         <figure class="about-media">
-          <img src="assets/img/verksted.webp" alt="Verktøyvegg i et snekkerverksted" width="1100" height="825" loading="lazy">
-          <figcaption>[Teambilde fra Jærprosjekt]</figcaption>
+          <div class="about-video">
+            <video muted loop playsinline preload="none" poster="assets/img/om-oss-poster.webp" aria-label="Tømrer setter opp ny hvit kledning på et trehus på Jæren">
+              <source src="assets/video/om-oss.webm" type="video/webm">
+              <source src="assets/video/om-oss.mp4" type="video/mp4">
+            </video>
+            <button class="video-toggle" type="button" aria-pressed="false">
+              <span class="video-toggle-pause">Pause video</span>
+              <span class="video-toggle-play">Spill av video</span>
+            </button>
+          </div>
+          <figcaption>Illustrasjonsvideo. [Teambilde fra Jærprosjekt] kommer.</figcaption>
         </figure>
         <div class="about-text">
           <p class="eyebrow">Om oss</p>

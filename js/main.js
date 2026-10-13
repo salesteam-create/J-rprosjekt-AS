@@ -53,11 +53,31 @@ document.addEventListener('click', (e) => {
   toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2600);
 });
 
-// Video i hero: respekter redusert bevegelse
-const heroVideo = document.querySelector('.hero-video');
-if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  heroVideo.removeAttribute('autoplay');
-  heroVideo.pause();
+// Video i Om oss: spiller bare når den er synlig, og aldri automatisk ved redusert bevegelse
+const aboutVideo = document.querySelector('.about-video video');
+const videoToggle = document.querySelector('.video-toggle');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let videoPausedByUser = reduceMotion;
+
+function setVideoPaused(paused) {
+  videoToggle.setAttribute('aria-pressed', String(paused));
+  if (paused) aboutVideo.pause();
+  else aboutVideo.play().catch(() => {});
+}
+
+if (aboutVideo) {
+  videoToggle.setAttribute('aria-pressed', String(videoPausedByUser));
+
+  videoToggle.addEventListener('click', () => {
+    videoPausedByUser = !videoPausedByUser;
+    setVideoPaused(videoPausedByUser);
+  });
+
+  new IntersectionObserver(([entry]) => {
+    if (videoPausedByUser) return;
+    if (entry.isIntersecting) aboutVideo.play().catch(() => {});
+    else aboutVideo.pause();
+  }, { threshold: 0.25 }).observe(aboutVideo);
 }
 
 // Filopplasting: vis filnavn

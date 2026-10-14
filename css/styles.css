@@ -168,7 +168,9 @@ h3 { font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; }
 .main-nav a:hover { background-size: 100% 2px; }
 
 .header-actions { display: flex; align-items: center; gap: 20px; }
-.header-phone { font-family: var(--font-head); font-weight: 500; font-size: 16px; text-decoration: none; }
+.header-phone { font-family: var(--font-head); font-weight: 500; font-size: 16px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px; }
+.header-phone svg { width: 17px; height: 17px; color: var(--green); }
 .header-phone:hover { text-decoration: underline; }
 
 .nav-toggle {
